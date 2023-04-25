@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+    <div class="container">
+      <div class="pitanje">
+        <h1 id="pitanje"></h1>
+
+        <div class="odgovori">
+          <button id="odgovor1" class="odgovor"></button>
+          <button id="odgovor2" class="odgovor"></button>
+          <button id="odgovor3" class="odgovor"></button>
+          <button id="odgovor4" class="odgovor"></button>
+        </div>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Next question</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>DA LI STE SIGURNI</h2>
+    </div>
+    <div class="modal-body">
+      <p>DA CE TO BITI VAS KONTACAN ODGOVOR</p>
+    </div>
+    <div class="modal-footer">  
+      <button>siguran sam 
+      </button>
+      <button>nesiguran sam</button>
+    </div>
+  </div>
+
+</div>
+      </div>
+
+      
+    </div>
+
+
     <script src="questions.js"></script>
     <script src="quiz.js"></script>
+
     <!-- aaa -->
   </body>
 </html>
