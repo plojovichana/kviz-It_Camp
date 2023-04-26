@@ -4,6 +4,10 @@ let pitanje = document.getElementById("pitanje");
     let odgovor2 = document.getElementById("odgovor2");
     let odgovor3 = document.getElementById("odgovor3");
     let odgovor4 = document.getElementById("odgovor4");
+    let kojeJePitanjePoRedu = document.getElementById("pitanjePoRedu");
+
+
+
 
     let brojac =0;
 function shuffle(n){
@@ -61,4 +65,34 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}   
+
+function peto_deseto_petnaesto_pitanje (){
+    if(brojac===5 || brojac===10 || brojac===15){
+        document.getElementById("myBtn").style.background = "red";
+    }
 }
+
+//  function kojeJePitanjePoRedu(){
+//         if(brojac===0){
+//             kojeJePitanjePoRedu.innerHTML = "Prvo pitanje";
+//         }
+//         else if(brojac===5){
+//             kojeJePitanjePoRedu.innerHTML = "Šesto pitanje";
+//         }
+//         else if(brojac===10){
+//             kojeJePitanjePoRedu.innerHTML = "Jedanaesto pitanje";
+//         }
+//         else if(brojac===15){
+//             kojeJePitanjePoRedu.innerHTML = "Šesnaesto pitanje";
+//         }
+//         else if(brojac===20){
+//             kojeJePitanjePoRedu.innerHTML = "Zadnje pitanje";
+//         }
+//         else{
+//             kojeJePitanjePoRedu.innerHTML = "Pitanje broj " + (brojac+1);
+//         }
+//     }
+
+
+// kojeJePitanjePoRedu();
