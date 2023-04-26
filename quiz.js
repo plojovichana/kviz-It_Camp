@@ -6,9 +6,9 @@ let pitanje = document.getElementById("pitanje");
     let odgovor4 = document.getElementById("odgovor4");
     let kojeJePitanjePoRedu = document.getElementById("pitanjePoRedu");
     let btnzanesiguran = document.getElementById("nesiguranBtn");
-    let zajednickaklasadogovora = document.querySelector(".odgovor")
+    let zajednickaklasadogovora = document.querySelectorAll(".odgovor")
 
-
+console.log(zajednickaklasadogovora)
 
     let brojac =0;
 function shuffle(n){
@@ -52,9 +52,11 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-zajednickaklasadogovora.onclick = function() {
+zajednickaklasadogovora.forEach(el=>{
+  el.onclick = function() {
   modal.style.display = "block";
 }
+})
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -73,23 +75,29 @@ window.onclick = function(event) {
 }   
 
 function peto_deseto_petnaesto_pitanje (){
-    if(brojac===5 || brojac===10 || brojac===15){
+    if(brojac===4 || brojac===9 || brojac===14){
         // document.getElementById("").style.backgroundColor = "red";
         const obavestenje = document.createElement("h5");
         obavestenje.style.textAlign = 'center';
         obavestenje.style.color = ''
-        obavestenje.innerText = "Sada ste na "+ brojac + " pitanju";
+        obavestenje.innerText = "Sada ste na "+ (brojac+1) + " pitanju";
         pitanje.appendChild(obavestenje);
 
     }
 }
 peto_deseto_petnaesto_pitanje();
 
-function clickNaSiguran(){
+function clickNaSiguran(br){
   brojac++;
     prikazPitanja();
+    console.log("Trenutno je na pitanju broj " + (br+2) + " od ukupno 15 pitanja.");
     
     peto_deseto_petnaesto_pitanje();
     modal.style.display = 'none';
 }
 
+// function kojepitanjeporedu(br){
+//     console.log("Trenutno je na pitanju broj " + br + " od ukupno 15 pitanja.");
+// }
+
+// kojepitanjeporedu(brojac);
