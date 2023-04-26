@@ -14,37 +14,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 35px;
     flex-direction: column;
 }
 
 .pitanje{
-    width: 90%;
+    width: 50%;
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(211, 185, 185);
+    background-color: rgb(197, 211, 185);
 }
 
 #pitanje{
     color: black;
     font-size: 40px;
+    text-align: center;
     font-weight: bold;
     margin: 20px;
 
 }
 
 .odgovori{
-    width: 80%;
-    height: 30%;
+    width: 60%;
+    height: 50%;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
     justify-content: center;
     align-items: center;
-    background-color: rgba(196, 155, 155, 0.76);
+    background-color: rgba(172, 196, 155, 0.76);
 }
 
 .odgovor{
@@ -62,7 +64,7 @@
 
 .odgovor:focus{
     background-color: rgb(253, 238, 238);
-    border: 2px solid rgb(211, 185, 185);
+    border: 2px solid rgb(193, 211, 185);
 }
 
 #next{
@@ -71,7 +73,7 @@
 
 
 #myBtn{
-    /* height: 10%; */
+    /* height: 10%  ; */
     background-color: rgb(243, 236, 236);
     border-radius: 10px;
     margin-top: 40px;
@@ -145,15 +147,20 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .modal-header {
   padding: 16px ;
-  background-color: #957272;
+  background-color: #789572;
+  text-align: center;
   color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+    text-align: center;
+    background-color: #e9e1e1;
+}
 
 .modal-footer {
   padding: 16px;
-  background-color: #956060;
+  background-color: #83ad83;
   color: white;
 }
 
@@ -199,7 +206,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .navbar-logo p{
     font-size: 30px;
     font-weight: bold;
-    color: rgb(209, 193, 193);
+    color: rgb(195, 209, 193);
 }
 
 #myBtn2{
@@ -215,3 +222,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .btns{
     /* display: flex; 
 } */
+
+.modal-btn{
+    width: 100%;
+    padding: 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 236, 236);
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(243, 236, 236);
+}

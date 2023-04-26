@@ -5,7 +5,8 @@ let pitanje = document.getElementById("pitanje");
     let odgovor3 = document.getElementById("odgovor3");
     let odgovor4 = document.getElementById("odgovor4");
     let kojeJePitanjePoRedu = document.getElementById("pitanjePoRedu");
-
+    let btnzanesiguran = document.getElementById("nesiguranBtn");
+    let zajednickaklasadogovora = document.querySelector(".odgovor")
 
 
 
@@ -51,7 +52,7 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+zajednickaklasadogovora.onclick = function() {
   modal.style.display = "block";
 }
 
@@ -59,6 +60,10 @@ btn.onclick = function() {
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+btnzanesiguran.onclick = function() {
+    modal.style.display = "none";
+  }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -69,30 +74,22 @@ window.onclick = function(event) {
 
 function peto_deseto_petnaesto_pitanje (){
     if(brojac===5 || brojac===10 || brojac===15){
-        document.getElementById("myBtn").style.background = "red";
+        // document.getElementById("").style.backgroundColor = "red";
+        const obavestenje = document.createElement("h5");
+        obavestenje.style.textAlign = 'center';
+        obavestenje.style.color = ''
+        obavestenje.innerText = "Sada ste na "+ brojac + " pitanju";
+        pitanje.appendChild(obavestenje);
+
     }
 }
+peto_deseto_petnaesto_pitanje();
 
-//  function kojeJePitanjePoRedu(){
-//         if(brojac===0){
-//             kojeJePitanjePoRedu.innerHTML = "Prvo pitanje";
-//         }
-//         else if(brojac===5){
-//             kojeJePitanjePoRedu.innerHTML = "Šesto pitanje";
-//         }
-//         else if(brojac===10){
-//             kojeJePitanjePoRedu.innerHTML = "Jedanaesto pitanje";
-//         }
-//         else if(brojac===15){
-//             kojeJePitanjePoRedu.innerHTML = "Šesnaesto pitanje";
-//         }
-//         else if(brojac===20){
-//             kojeJePitanjePoRedu.innerHTML = "Zadnje pitanje";
-//         }
-//         else{
-//             kojeJePitanjePoRedu.innerHTML = "Pitanje broj " + (brojac+1);
-//         }
-//     }
+function clickNaSiguran(){
+  brojac++;
+    prikazPitanja();
+    
+    peto_deseto_petnaesto_pitanje();
+    modal.style.display = 'none';
+}
 
-
-// kojeJePitanjePoRedu();

@@ -13,7 +13,14 @@
 
     <div class="container">
       
+      <div class="header">
+        <div class="btns">
+        <button id="myBtn2">Restart Quiz</button>
+</div>
+      </div>
+      
       <div class="pitanje">
+        
         <h3 id="pitanjePoRedu"></h3>
         <h1 id="pitanje"></h1>
 
@@ -28,11 +35,7 @@
 
 <!-- Trigger/Open The Modal -->
 
-<div class="btns">
-  <button id="myBtn">Next question</button>
 
-          <button id="myBtn2">Restart</button>
-</div>
 
         
 <!-- The Modal -->
@@ -48,9 +51,9 @@
       <p>DA CE TO BITI VAS KONTACAN ODGOVOR</p>
     </div>
     <div class="modal-footer">  
-      <button>siguran sam 
+      <button onclick="clickNaSiguran()" class="modal-btn" id="siguranBtn">siguran sam 
       </button>
-      <button>nesiguran sam</button>
+      <button id="nesiguranBtn" class="modal-btn"  >nesiguran sam</button>
     </div>
   </div>
 
