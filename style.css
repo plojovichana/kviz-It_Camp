@@ -3,6 +3,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    /* border-radius: 15px; */
     box-sizing: border-box;
 
 }
@@ -21,16 +22,17 @@
 .pitanje{
     width: 50%;
     height: 70%;
+    border-radius: 15px;
     display: flex;
     padding: 0px 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(197, 211, 185);
+    background-color: #6096B4;
 }
 
 #pitanje{
-    color: black;
+    color: white;
     font-size: 40px;
     text-align: center;
     font-weight: bold;
@@ -47,7 +49,7 @@
     padding: 20px;
     justify-content: center;
     align-items: center;
-    background-color: rgba(172, 196, 155, 0.76);
+    background-color: #6096B4;
 }
 
 .odgovor{
@@ -63,9 +65,12 @@
     border: 2px solid rgb(243, 236, 236);
 }
 
-.odgovor:focus{
-    background-color: rgb(253, 238, 238);
-    border: 2px solid rgb(193, 211, 185);
+.odgovor:hover{ 
+    background-color: #6096B4;
+    color: white;
+    border: 2px solid rgb(253, 238, 238);
+  
+
 }
 
 #next{
@@ -148,7 +153,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .modal-header {
   padding: 16px ;
-  background-color: #789572;
+  background-color: #6096B4;
   text-align: center;
   color: white;
 }
@@ -161,7 +166,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .modal-footer {
   padding: 16px;
-  background-color: #83ad83;
+  background-color: #6096B4;
   color: white;
 }
 
@@ -215,9 +220,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border-radius: 10px;
     margin-top: 10px;
     cursor: pointer;
+    text-decoration: none;
+    color: #6096B4;
+    font-weight: bold;
     padding: 15px;
     border: 2px solid rgb(243, 236, 236);
 
+}
+
+#myBtn2:hover{
+    background-color: #6096B4;
+    color: rgb(243, 236, 236);
+  border: 2px solid rgb(243, 236, 236);
 }
 /* 
 .btns{
@@ -235,4 +249,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border-radius: 10px;
     cursor: pointer;
     border: 2px solid rgb(243, 236, 236);
+}
+
+.header{
+    width: 50%;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #6097b4e3;
+}
+
+#tajmer{
+  color: white;
+    display: flex;
+    font-weight: bold;
+    font-size: 27px;
 }

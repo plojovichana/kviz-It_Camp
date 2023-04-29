@@ -8,6 +8,9 @@ let pitanje = document.getElementById("pitanje");
     let btnzanesiguran = document.getElementById("nesiguranBtn");
     let zajednickaklasadogovora = document.querySelectorAll(".odgovor")
 
+    let currentQuestion = 0;
+let score = 0;
+
 console.log(zajednickaklasadogovora)
 
     let brojac =0;
@@ -94,10 +97,42 @@ function clickNaSiguran(br){
     
     peto_deseto_petnaesto_pitanje();
     modal.style.display = 'none';
+    provera_odgovora();
 }
 
-// function kojepitanjeporedu(br){
-//     console.log("Trenutno je na pitanju broj " + br + " od ukupno 15 pitanja.");
-// }
+function provera_odgovora(){
+zajednickaklasadogovora.forEach(el=>{
+  el.addEventListener('click',()=>{
+   const index = questions[brojac].answers.indexOf(el.innerText);
+    console.log(index);
+    if(index === questions[brojac].correct_answer){
+      score++;
+      console.log("uvexan je skor")
+    }else{
+      console.log("nije se povecao skor");
+    }
+  })
+})  
+ 
+}
 
-// kojepitanjeporedu(brojac);
+
+//funkcija za tajmer od po 30sekundi koji se za svako pitanje ponovo pokrece
+
+function tajmer(){
+  let sekunde = 30;
+  let interval = setInterval(()=>{
+    document.getElementById("tajmer").innerHTML = sekunde;
+    sekunde--;
+    if(sekunde === -1){
+      clearInterval(interval);
+      brojac++;
+      prikazPitanja();
+      provera_odgovora();
+      peto_deseto_petnaesto_pitanje();
+      tajmer();
+    }
+  },1000)
+}
+tajmer();
+
