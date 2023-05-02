@@ -8,14 +8,18 @@ let pitanje = document.getElementById("pitanje");
     let btnzanesiguran = document.getElementById("nesiguranBtn");
     let zajednickaklasadogovora = document.querySelectorAll(".odgovor");
     let siguranBtn = document.querySelector("#siguranBtn")
+    let correct = document.querySelector(".correct")
+    let end = document.querySelector(".end")
+    let skor = document.querySelector("#skor")
+   
 
 
     let currentQuestion = 0;
-let score = 0;
+    let score = 0;
 
 console.log(zajednickaklasadogovora)
 
-    let brojac =0;
+    let brojac = 0;
 function shuffle(n){
 
     for(let i=0;i<n;i++){
@@ -37,6 +41,7 @@ function prikazPitanja() {
     odgovor2.innerHTML = questions[brojac].answers[1];
     odgovor3.innerHTML = questions[brojac].answers[2];
     odgovor4.innerHTML = questions[brojac].answers[3];
+    
 }
 shuffle(10000);
 console.log(questions)
@@ -92,33 +97,36 @@ function peto_deseto_petnaesto_pitanje (){
 }
 peto_deseto_petnaesto_pitanje();
 
-function clickNaSiguran(br){
-  brojac++;
+function clickNaSiguran(){
     prikazPitanja();
-    console.log("Trenutno je na pitanju broj " + (br+2) + " od ukupno 15 pitanja.");
+    console.log("Trenutno je na pitanju broj " + (brojac+1) + " od ukupno 15 pitanja.");
     peto_deseto_petnaesto_pitanje();
-
     modal.style.display = 'none';
-    provera_odgovora(); 
     tajmer();
 }
 
 function provera_odgovora(){
-zajednickaklasadogovora.forEach(el=>{
+zajednickaklasadogovora.forEach((el)=>{
   el.addEventListener('click',()=>{
    const index = questions[brojac].answers.indexOf(el.innerText);
-    console.log(index);
     if(index === questions[brojac].correct_answer){
-      score++;
-      console.log("uvexan je skor")
+      console.log("uvexan je skor");
+      score += 1
+
+
     }else{
       console.log("nije se povecao skor");
+      score+=0
+     
+
     }
+    correct.textContent = `You Got ${score} Out Of ${questions.length} Quastions.`
   })
 })  
- 
+
 }
 
+provera_odgovora();
 
 //funkcija za tajmer od po 30sekundi koji se za svako pitanje ponovo pokrece
 
@@ -130,17 +138,19 @@ function tajmer(){
 
     if(sekunde === -1){
       clearInterval(interval);
-      brojac++;
+      brojac++
       prikazPitanja();
       provera_odgovora();
       peto_deseto_petnaesto_pitanje();
       tajmer();
+      
      
     }
     siguranBtn.onclick = function(){
       clearInterval(interval);
-      brojac++; 
+      brojac++ 
       clickNaSiguran();
+      
         
     }
   },1000)
@@ -149,3 +159,8 @@ tajmer();
 
 
 
+ 
+
+
+     
+  
